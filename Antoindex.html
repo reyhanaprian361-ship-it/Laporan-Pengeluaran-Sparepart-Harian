@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
 <meta charset="UTF-8">
 <title>Form Pengeluaran Sparepart</title>
 <style>
@@ -23,9 +25,9 @@ body{
 table{
   border-collapse: collapse;
   width: 100%;      /* selalu sesuaikan dengan lebar container */
-  max-width: 600px; /* optional: agar tidak terlalu melebar di layar besar */
+  max-width: 100%; /* optional: agar tidak terlalu melebar di layar besar */
   background: #fff;
-  font-size: 14px;  /* ukuran teks pas untuk mobile */
+  font-size: 16px;  /* ukuran teks pas untuk mobile */
 }
 
 /* 4) sel dan label */
@@ -143,7 +145,7 @@ function addForm(){
 
 <tr>
 <td class="label">KM</td>
-<td><input class="upper" placeholder="ANGKA SAJA"></td>
+<td><input class="upper" placeholder="Kilometer ODO"></td>
 </tr>
 
 <tr>
@@ -159,7 +161,7 @@ function addForm(){
 
 <tr>
 <td class="label">List Barang</td>
-<td><textarea rows="4" placeholder="CONTOH: BAN : 2 p"></textarea></td>
+<td><textarea rows="4" placeholder="CONTOH: Nama Barang : 1 p"></textarea></td>
 </tr>
 
 </table>`;
@@ -170,10 +172,11 @@ addForm();
 // FORMAT ITEM
 function formatItem(line){
   return line
-    .replace(/\b(\d+)\s*p\b/i, '$1 PCS')
-    .replace(/\b(\d+)\s*s\b/i, '$1 SET')
-    .replace(/\b(\d+)\s*b\b/i, '$1 BTL')
-    .replace(/\b(\d+)\s*r\b/i, '$1 ROLL');
+    .replace(/\b(\d+)\s*p\b/i, '$1 Pcs')
+    .replace(/\b(\d+)\s*s\b/i, '$1 Set')
+    .replace(/\b(\d+)\s*b\b/i, '$1 Btl')
+    .replace(/\b(\d+)\s*l\b/i, '$1 Ltr')
+    .replace(/\b(\d+)\s*r\b/i, '$1 Roll');
 }
 
 // GENERATE
